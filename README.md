@@ -18,6 +18,8 @@ npm install @mfk/react-qr
 yarn add @mfk/react-qr
 # or
 pnpm add @mfk/react-qr
+# or
+bun add @mfk/react-qr
 ```
 
 ## Usage
@@ -74,6 +76,8 @@ npm install @mfk/react-qr
 yarn add @mfk/react-qr
 # veya
 pnpm add @mfk/react-qr
+# veya
+bun add @mfk/react-qr
 ```
 
 ## Kullanım

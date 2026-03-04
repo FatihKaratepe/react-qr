@@ -5,6 +5,7 @@
     "jsx": "react-jsx",
     "declaration": true,
     "declarationDir": "dist",
+    "rootDir": "src",
     "emitDeclarationOnly": false,
     "moduleResolution": "bundler",
     "strict": true,
