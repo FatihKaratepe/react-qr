@@ -1,14 +1,16 @@
 {
   "name": "@mfk/react-qr",
   "version": "1.0.0",
+  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsup src/index.ts --format cjs,esm --dts --sourcemap"
   },
   "peerDependencies": {
     "react": "^18 || ^19",
@@ -21,5 +23,34 @@
     "typescript": "^5.9.3"
   },
   "author": "Fatih Karatepe",
-  "license": "MIT"
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "description": "A customizable and easy-to-use React component for generating QR codes with support for SVG, Canvas, and optional embedded images.",
+  "keywords": [
+    "react",
+    "qr",
+    "qrcode",
+    "react-qr",
+    "qr-code",
+    "canvas",
+    "svg",
+    "react-component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FatihKaratepe/react-qr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FatihKaratepe/react-qr/issues"
+  },
+  "homepage": "https://github.com/FatihKaratepe/react-qr#readme"
 }
