@@ -1,6 +1,6 @@
 import React from 'react';
-import type { ErrorCorrectionLevel, ImageSettings } from '../interface';
 import { QrCode, QrSegment } from '../libs/qrcodegen';
+import type { ErrorCorrectionLevel, ImageSettings } from '../types';
 import { ERROR_LEVEL_MAP, getImageSettings, getMarginSize } from '../utils';
 
 interface Options {

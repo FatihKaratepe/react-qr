@@ -3,6 +3,7 @@
 
 // ==========================================================
 
+import { Ecc } from './libs/qrcodegen';
 import type {
   CrossOrigin,
   ERROR_LEVEL_MAPPED_TYPE,
@@ -10,8 +11,7 @@ import type {
   Excavation,
   ImageSettings,
   Modules,
-} from './interface';
-import { Ecc } from './libs/qrcodegen';
+} from './types';
 
 // =================== ERROR_LEVEL ==========================
 export const ERROR_LEVEL_MAP: ERROR_LEVEL_MAPPED_TYPE = {
@@ -45,9 +45,7 @@ export const generatePath = (modules: Modules, margin: number = 0) => {
     let start: number | null = null;
     row.forEach((cell, x) => {
       if (!cell && start !== null) {
-        ops.push(
-          `M${start + margin} ${y + margin}h${x - start}v1H${start + margin}z`,
-        );
+        ops.push(`M${start + margin} ${y + margin}h${x - start}v1H${start + margin}z`);
         start = null;
         return;
       }
@@ -59,11 +57,7 @@ export const generatePath = (modules: Modules, margin: number = 0) => {
         if (start === null) {
           ops.push(`M${x + margin},${y + margin} h1v1H${x + margin}z`);
         } else {
-          ops.push(
-            `M${start + margin},${y + margin} h${x + 1 - start}v1H${
-              start + margin
-            }z`,
-          );
+          ops.push(`M${start + margin},${y + margin} h${x + 1 - start}v1H${start + margin}z`);
         }
         return;
       }
@@ -126,14 +120,8 @@ export const getImageSettings = (
   const scale = numCells / size;
   const w = (imageSettings.width || defaultSize) * scale;
   const h = (imageSettings.height || defaultSize) * scale;
-  const x =
-    imageSettings.x == null
-      ? cells.length / 2 - w / 2
-      : imageSettings.x * scale;
-  const y =
-    imageSettings.y == null
-      ? cells.length / 2 - h / 2
-      : imageSettings.y * scale;
+  const x = imageSettings.x == null ? cells.length / 2 - w / 2 : imageSettings.x * scale;
+  const y = imageSettings.y == null ? cells.length / 2 - h / 2 : imageSettings.y * scale;
   const opacity = imageSettings.opacity == null ? 1 : imageSettings.opacity;
 
   let excavation = null;

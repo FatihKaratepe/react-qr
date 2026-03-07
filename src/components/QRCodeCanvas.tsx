@@ -1,6 +1,6 @@
 import React from 'react';
-import { useQRCode } from './hooks/useQRCode';
-import type { QRPropsCanvas } from './interface';
+import { useQRCode } from '../hooks/useQRCode';
+import type { QRPropsCanvas } from '../types';
 import {
   DEFAULT_BACKGROUND_COLOR,
   DEFAULT_FRONT_COLOR,
@@ -11,7 +11,7 @@ import {
   excavateModules,
   generatePath,
   isSupportPath2d,
-} from './utils';
+} from '../utils';
 
 const QRCodeCanvas = React.forwardRef<HTMLCanvasElement, QRPropsCanvas>((props, ref) => {
   const {
